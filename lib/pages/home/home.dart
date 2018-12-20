@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:weather_app/pages/summary/summary.dart';
 
 class HomePage extends StatelessWidget {
 
@@ -20,24 +21,29 @@ class HomePage extends StatelessWidget {
           ),
         ],
       ),
-      body: Center(
-        child: Container(
+      body: Container(
           padding: const EdgeInsets.all(16.0),
-          child: Column(
-            children: <Widget>[
-              TextField(
-                decoration: InputDecoration(hintText: 'Enter zip code...'),
-              ),
-              RaisedButton(
-                child: Text('yo'),
-                onPressed: () {
-                  print('yo');
-                },
-              ),
-            ],
+          child: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                TextField(
+                  decoration: InputDecoration(hintText: 'Enter zip code...'),
+                ),
+                RaisedButton(
+                  child: Text('yo'),
+                  onPressed: () {
+                    print('yo');
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Summary()),
+                    );
+                  },
+                ),
+              ],
+            ),
           ),
         ),
-      ),
-    );
+      );
   }
 }
